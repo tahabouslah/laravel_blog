@@ -1,0 +1,10 @@
+article + article {
+    margin-top: 16px;
+    padding-top: 16px;
+    margin: auto;
+    border-top: 1px solid #c5c5c5;
+}
+
+p {
+    line-height: 1.7;;
+}
