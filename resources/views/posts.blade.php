@@ -11,6 +11,9 @@
     <?php foreach ($posts as $p ) : ?>
         <article>
             <h1><a href="post/{{$p->id}}"><?=  $p->title; ?></a></h1>
+
+            <a href="/categories/{{$p->category->slug}}">{{$p->category->name}}</a>
+
             <p><?= $p->excerpt; ?></p>
         </article>
     <?php endforeach  ?>

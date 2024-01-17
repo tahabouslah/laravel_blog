@@ -10,6 +10,8 @@
 <body>
     <article>
         <h1><?= $post->title ?><h1>
+        by<a href="#">  Taha bouslah </a>  in <a href="/categories/{{$post->category->slug}}">{{$post->category->name}}</a>
+
         <p><?= $post->body  ?></p>
     </article>
 
