@@ -50,3 +50,10 @@ Route::get('/categories/{category:slug}', function (Category $category) {
         'posts' => $p
     ]);
 });
+
+
+Route::get('/users/{user:username}', function(User $user){
+    return view("post", [
+        'posts' => $user->posts
+    ]);
+});
