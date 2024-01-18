@@ -10,7 +10,7 @@
 <body>
     <article>
         <h1><?= $post->title ?><h1>
-        by<a href="/users/{{$post->author->username}}">{{$post->author->name}} </a>  in <a href="/categories/{{$post->category->slug}}">{{$post->category->name}}</a>
+        by<a href="/author/{{$post->author->username}}">{{$post->author->name}} </a>  in <a href="/categories/{{$post->category->slug}}">{{$post->category->name}}</a>
 
         <p><?= $post->body  ?></p>
     </article>
