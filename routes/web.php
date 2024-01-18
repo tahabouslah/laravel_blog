@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $posts = cache()->remember("posts", 5, function () {
-        return  Post::latest()->with('category', 'author')->get();
+        return  Post::latest()->get();
     });
     return view('posts', [
         'posts' => $posts
@@ -33,7 +33,7 @@ Route::get('/post/{post}', function ($id) {
 
 
 
-    $post = cache()->remember("post.{$id}", 5, function () use ($id) {
+    $post = cache()->remember("post.{$id}", 3600, function () use ($id) {
         return Post::find($id);
     });
 
