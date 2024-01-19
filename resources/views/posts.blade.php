@@ -1,21 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="/main.css">
-</head>
-<body>
-    <?php foreach ($posts as $p ) : ?>
+<x-layout>
+    {{-- @foreach ($posts as $p )
         <article>
             <h1><a href="post/{{$p->id}}"><?=  $p->title; ?></a></h1>
 
             <a href="/categories/{{$p->category->slug}}">{{$p->category->name}}</a>
 
-            <p><?= $p->excerpt; ?></p>
+            <p>{{$p->excerpt}}</p>
         </article>
-    <?php endforeach  ?>
-</body>
-</html>
+    @endforeach --}}
+
+        @include('_posts-header')
+
+        <main class="max-w-6xl mx-auto mt-6 lg:mt-20 space-y-6">
+            <x-post-featured-card />
+
+            <div class="lg:grid lg:grid-cols-2">
+                <x-post-card />
+                <x-post-card />
+            </div>
+
+            <div class="lg:grid lg:grid-cols-3">
+
+
+                <x-post-card />
+                <x-post-card />
+                <x-post-card />
+
+            </div>
+        </main>
+
+</x-layout>
+
+
